@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer Base{
+*{
+      margin-top:0 !important; 
+    padding:0;
+    box-sizing:border-box;
+}
+ body {
+    color: #161616;
+    background-color: #c0d3e7;
+   font-family: "Inter", sans-serif;
+ }
+
+html{
+  scroll-behavior: smooth;
+}
+.row{
+  margin:120px;
+}
+input{
+  border: #F8FAFC 1px solid;
+  padding: 8px;
+}
+}
+
+@layer utilities{
+  
+}
