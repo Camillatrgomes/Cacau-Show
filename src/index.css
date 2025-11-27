@@ -1,11 +1,13 @@
 @import "tailwindcss";
-
-@layer Base{
+/* 
 *{
-      margin-top:0 !important; 
+    margin-top:0 !important; 
     padding:0;
     box-sizing:border-box;
-}
+} */
+
+@layer Base{
+
  body {
     color: #fff;
     background-color: #fff;
@@ -26,7 +28,6 @@ input{
   background-color: #1A0D00;
 }
 button {
-  margin: 50px;
   padding: 10px 20px;
 }
 }

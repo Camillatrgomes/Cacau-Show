@@ -4,7 +4,7 @@ import Home from "./components/Home";
 function App() {
 
   return (
-    <div>
+    <div className='overflow-auto scrollbar-hide'>
      <NavBar/>
      <Home/>
       </div>
