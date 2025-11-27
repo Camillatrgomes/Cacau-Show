@@ -7,8 +7,8 @@
     box-sizing:border-box;
 }
  body {
-    color: #161616;
-    background-color: #c0d3e7;
+    color: #fff;
+    background-color: #fff;
    font-family: "Inter", sans-serif;
  }
 
@@ -21,6 +21,13 @@ html{
 input{
   border: #F8FAFC 1px solid;
   padding: 8px;
+}
+.bgHeader{
+  background-color: #1A0D00;
+}
+button {
+  margin: 50px;
+  padding: 10px 20px;
 }
 }
 
