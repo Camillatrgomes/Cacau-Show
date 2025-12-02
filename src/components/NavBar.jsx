@@ -23,7 +23,7 @@ function NavBar() {
             <div className="relative inset-y-20 left-34 mx-auto flex justify-center gap-28 text-white">
                 <a className="hover:text-[#cacaca]" href="#">Trufas</a>
                 <a className="hover:text-[#cacaca]" href="#">Dia dos Pais</a>
-                <a className="hover:text-[#cacaca]" href="#produtos">Produtos</a>
+                <a className="hover:text-[#cacaca]" href="">Produtos</a>
                 <a className="hover:text-[#cacaca]" href="#">Sobre nós</a>
                 <button type="submit" className="flex w-40 rounded-2xl shadow-lg">carrinho</button>
           </div>

@@ -8,8 +8,8 @@ function Home() {
             alt=""
             className="w-full h-full pt-5 object-cover"
           />
-          <div className=" w-full p-5">
-            <div className="flex gap-6 justify-center pt-4">
+          <div className=" w-full">
+            <div className="flex gap-6 justify-center pt-24">
               <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300">
                 Cupom de Primeira compra <br />
                 Clique aqui para copiar
