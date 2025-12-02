@@ -17,6 +17,9 @@
 html{
   scroll-behavior: smooth;
 }
+}
+
+@layer utilities{
 .row{
   margin:120px;
 }
@@ -30,8 +33,4 @@ input{
 button {
   padding: 10px 20px;
 }
-}
-
-@layer utilities{
-  
 }

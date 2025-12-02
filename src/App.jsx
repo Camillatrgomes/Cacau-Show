@@ -1,12 +1,14 @@
 import NavBar from './components/NavBar';
 import Home from "./components/Home";
+import Card from "./components/Card";
 
 function App() {
 
   return (
-    <div className='overflow-auto scrollbar-hide'>
+    <div>
      <NavBar/>
      <Home/>
+     <Card/>
       </div>
   )
 }
