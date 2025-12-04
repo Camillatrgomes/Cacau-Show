@@ -1,60 +1,141 @@
-import img1 from '../assets/img1.png';
-import img2 from '../assets/img2.png';
-import img3 from '../assets/img3.png';
+import { useState } from "react";
+import img1 from "../assets/img1.webp";
+import img2 from "../assets/img2.png";
+import img3 from "../assets/img3.webp";
+import img4 from "../assets/img4.png";
+import img5 from "../assets/img5.webp";
+import img6 from "../assets/img6.webp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCartShopping,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 
+function ContadorComLimite() {
+  const [quantidade, setQuantidade] = useState(0);
+  const max = 99;
+  return (
+    <div className="w-32 bg-gray-100 border border-gray-300 rounded-md">
+      <button
+        className="w-12 h-10 text-[#068421] text-2xl cursor-pointer"
+        onClick={() => setQuantidade(Math.max(0, quantidade - 1))}
+        disabled={quantidade === 0}
+      >
+        -
+      </button>
 
-function Card(){
-const produtos= [
-    {img: img1,
-    label:'Trufa laCreme ao Leite 13,5g',
-    button:'Cacau Lovers ',
-    labelButton:'Leve 4 e Pague 3 / Leve 10 e Pague 7',
-    precoRiscado:'R$4,49/un',
-    preco:'R$3,49/un',
-    buttonCarrinho: 'Adicionar ao carrinho'
-},
+      <span className='w-12 h-12 disabled:bg-gray-300 text-gray-700 text-2xl"'>
+        {quantidade.toString().padStart(2, "0")}
+      </span>
 
-    {img: img2, label:'Trufa laCreme branco 13,5g',
-    button:'Cacau Lovers ',
-    labelButton:'Leve 4 e Pague 3 / Leve 10 e Pague 7',
-    precoRiscado:'R$4,49/un',
-    preco:'R$3,49/un',
-    buttonCarrinho: 'Adicionar ao carrinho'
-},
-    
-
-
-    {img: img3, label:'Combo de trufa laCreme 28g',
-    button:'Cacau Lovers ',
-    labelButton:'Leve 4 e Pague 3 / Leve 10 e Pague 7',
-    precoRiscado:'R$4,49/un',
-    preco:'R$3,49/un',
-    buttonCarrinho: 'Adicionar ao carrinho'
-},
-]
-    return(
-        
-        <section className='row'>
-        <div className=' cards-container grid grid-flow-col pt-24 gap-x-20'>
-        {produtos.map (( produtos,index) => (
-            <div key={index} className='w-80 bg-white rounded-2xl shadow-lg mt-24'>
-                <img className='w-full h-72 object-cover-my-8' src={produtos.img} />
-
-                <h3 className='text-lg font-semibold text-gray-900 my-6 pt-4 px-3'>{produtos.label}</h3>
-
-                <button className='bg-[#AC4D53] text-white text-md px-5 ml-1 rounded-2xl text-start'>{produtos.button} <br /> {produtos.labelButton}</button>
-               
-                <div>
-                    <p className='text-gray-700 text-md pt-8 px-3'><s>{produtos.precoRiscado}</s></p>
-                    <p className='text-gray-700 text-2xl px-3'> {produtos.preco}</p>
-                    <button></button>
-                </div>
-
-                <button className='bg-[#068421] text-white text-md w-full py-6 rounded-b-lg text-center inset-shadow-sm inset-shadow-black-500'>{produtos.buttonCarrinho}</button>
-            </div>
-        )) }
-        </div>
-        </section>
-    )
+      <button
+        className="w-12 h-12 text-[#068421] text-2xl cursor-pointer"
+        onClick={() => setQuantidade(Math.min(max, quantidade + 1))}
+        disabled={quantidade >= max}
+      >
+        +
+      </button>
+    </div>
+  );
 }
-export default Card
+
+function Card() {
+  const produtos = [
+    {
+      img: img1,
+      label: "Trufa laCreme ao Leite 13,5g",
+      button: " Cacau Lovers ",
+      labelButton: " Leve 4 e Pague 3 / Leve 10 e Pague 7",
+      precoRiscado: "R$5,49/un",
+      preco: "R$3,49/un",
+      buttonCarrinho: " Adicionar ao carrinho",
+    },
+
+    {
+      img: img2,
+      label: "Trufa laCreme branco 13,5g",
+      button: " Cacau Lovers ",
+      labelButton: " Leve 4 e Pague 3 / Leve 10 e Pague 7",
+      precoRiscado: "R$5,49/un",
+      preco: "R$3,49/un",
+      buttonCarrinho: " Adicionar ao carrinho",
+    },
+    {
+      img: img3,
+      label: "Trufa laCreme Gianduia 13,5g",
+      button: " Cacau Lovers ",
+      labelButton: " Leve 4 e Pague 3 / Leve 10 e Pague 7",
+      precoRiscado: "R$5,49/un",
+      preco: "R$3,49/un",
+      buttonCarrinho: " Adicionar ao carrinho",
+    },
+
+    {
+      img: img4,
+      label: "Trufa Bendito Cacao de Chocolate 70% Cacau 13,5g",
+      button: " Cacau Lovers ",
+      labelButton: " Leve 4 e Pague 3 / Leve 10 e Pague 7",
+      precoRiscado: "R$5,49/un",
+      preco: "R$3,49/un",
+      buttonCarrinho: " Adicionar ao carrinho",
+    },
+    {
+      img: img5,
+      label: "Trufa Bendito Cacao de Chocolate 85% Cacau 13,5g",
+      button: " Cacau Lovers ",
+      labelButton: " Leve 4 e Pague 3 / Leve 10 e Pague 7",
+      precoRiscado: "R$5,49/un",
+      preco: "R$3,49/un",
+      buttonCarrinho: " Adicionar ao carrinho",
+    },
+    {
+      img: img6,
+      label: "Trufa laCreme Kids de Chocolate ao Leite 13,5g",
+      button: " Cacau Lovers ",
+      labelButton: " Leve 4 e Pague 3 / Leve 10 e Pague 7",
+      precoRiscado: "R$5,49/un",
+      preco: "R$3,49/un",
+      buttonCarrinho: " Adicionar ao carrinho",
+    },
+  ];
+
+  return (
+    <section className="row justify-center-safe">
+      <div className="cards-container grid grid-cols-3 pt-24">
+        {produtos.map((produtos, index) => (
+          <div
+            key={index}
+            className="w-80 bg-white rounded-2xl shadow-lg mt-24"
+          >
+            <img
+              className="w-full h-72 object-cover border shadow bg-amber-100"
+              src={produtos.img}
+            />
+
+            <h3 className="text-lg font-semibold text-gray-900 my-6 pt-4 px-3">
+              {produtos.label}
+            </h3>
+
+            <button className="bg-[#AC4D53] text-white text-md px-4 ml-1 rounded-2xl text-start cursor-pointer">
+              <FontAwesomeIcon icon={faHeart}/> {produtos.button} <br /> {produtos.labelButton}
+            </button>
+
+            <div className="relative grid grid-flow-col m-4">
+              <p className=" text-gray-700 text-md  px-3">
+                <s>{produtos.precoRiscado}</s>
+                <br /> {produtos.preco}
+              </p>
+              <ContadorComLimite />
+            </div>
+
+            <button className="bg-[#068421] text-white text-md w-full py-6 rounded-b-lg text-center inset-shadow-sm inset-shadow-black-500 cursor-pointer">
+              <FontAwesomeIcon icon={faCartShopping}/>
+              {produtos.buttonCarrinho}
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+export default Card;

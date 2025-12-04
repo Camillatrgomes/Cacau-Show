@@ -1,3 +1,11 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCheck,
+  faCartShopping,
+faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+
+
 function Home() {
 
     return (
@@ -12,16 +20,15 @@ function Home() {
             <div className="flex gap-6 justify-center pt-24">
               <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300">
                 Cupom de Primeira compra <br />
-                Clique aqui para copiar
+                <FontAwesomeIcon icon={faCheck}/> Clique aqui para copiar
               </button>
 
-              <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300">
-                Frete Grátis à partir de <br />
+              <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300"><FontAwesomeIcon icon={faCartShopping}/> Frete Grátis à partir de <br />
                 R$150,00 em compras
               </button>
 
               <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg  transition-all duration-300">
-                Compre pelo Whatsapp
+              <FontAwesomeIcon icon={faPhone}/> Compre pelo Whatsapp
               </button>
             </div>
           </div>
