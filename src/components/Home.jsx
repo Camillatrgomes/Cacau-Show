@@ -1,3 +1,4 @@
+import Banner from "../assets/banner.png";  
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheck,
@@ -9,26 +10,27 @@ faPhone,
 function Home() {
 
     return (
-      <section className="relative h-screen">
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-0 ">
+      <section className="relative sm:h-[30vh] lg:h-[50vh]">
+        <div className="inset-0 my-16 ">
           <img
-            src="/src/assets/banner.png"
+            src={Banner}
             alt=""
-            className="w-full h-full pt-5 object-cover"
+            className="w-full object-cover"
           />
-          <div className=" w-full">
-            <div className="flex gap-6 justify-center pt-24">
-              <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300">
+ 
+<div className="pt-16 w-full ">
+          <div className="flex flex-wrap gap-4 sm:gap-6 justify-center">
+                          <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300">
                 Cupom de Primeira compra <br />
-                <FontAwesomeIcon icon={faCheck}/> Clique aqui para copiar
+                <FontAwesomeIcon icon={faCheck} /> Clique aqui para copiar
               </button>
 
-              <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300"><FontAwesomeIcon icon={faCartShopping}/> Frete Grátis à partir de <br />
+              <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300"><FontAwesomeIcon icon={faCartShopping} /> Frete Grátis à partir de <br />
                 R$150,00 em compras
               </button>
 
               <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg  transition-all duration-300">
-              <FontAwesomeIcon icon={faPhone}/> Compre pelo Whatsapp
+              <FontAwesomeIcon icon={faPhone}  bounce/> Compre pelo Whatsapp
               </button>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import logo from "../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
@@ -5,25 +6,33 @@ import {
   faLocationDot,
   faAngleDown,
   faMagnifyingGlass,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
   return (
     <>
+<section className="hidden md:block">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1A0D00] text-white">
 
-     <nav className="fixed z-50 w-full bgHeader h-45">
-
-        <div className="grid grid-flow-col  justify-center col-auto">
-          <img src="/src/assets/logo.png" alt="" className=" left-4 align-middle fixed" />
+        <div className="absolute left-6 top-4">
+          <img src={logo} alt="" className="size-32 left-4 align-start fixed" />
         </div>
 
-          <div className="relative inset-y-10 left-34 flex justify-center columns-4 gap-7">
+<div className="flex items-center justify-center gap-8 pt-4">                
+                <div className="relative">
                 
-                <div className='-mr-14 flex items-center opacity-40 '>
-                  <FontAwesomeIcon icon={faMagnifyingGlass}/>
-                </div>
-
-                <input className=" w-120 h-10 border-white rounded-4xl " type="search" name="" id="search" placeholder= "      Buscar Produto" />
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className="absolute left-10 top-4 text-white opacity-50"
+              />
+            
+              <input
+                type="search"
+                placeholder="Buscar Produto"
+                className="w-96 pl-16 pr-6 py-3 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/50 focus:outline-none focus:border-white/50"
+              />
+            </div>
                 
                 <a className="hover:text-[#cacaca] pt-3" href="#" ><FontAwesomeIcon icon={faLocationDot}/>  Encontre uma loja</a>
 
@@ -33,14 +42,71 @@ function NavBar() {
 
           </div>
 
-            <div className="relative inset-y-20 left-34 mx-auto flex justify-center gap-28 text-white">
-                <a className="hover:text-[#cacaca]" href="#"><FontAwesomeIcon icon={faAngleDown}/>  Trufas</a>
-                <a className="hover:text-[#cacaca]" href="#"><FontAwesomeIcon icon={faAngleDown}/>  Dia dos Pais</a>
-                <a className="hover:text-[#cacaca]" href=""><FontAwesomeIcon icon={faAngleDown}/>  Produtos</a>
-                <a className="hover:text-[#cacaca]" href="#"><FontAwesomeIcon icon={faAngleDown}/>  Sobre nós</a>
-                <button type="submit" className="flex w-40 rounded-2xl shadow-lg justify-center inset- "><FontAwesomeIcon icon={faCartShopping} size="2x"/> </button>
+          <div className="flex justify-center gap-12 mt-6 pb-4 text-lg">
+            <a href="#" className="flex items-center gap-1 hover:text-gray-300">
+              Trufas <FontAwesomeIcon icon={faAngleDown} />
+            </a>
+            <a href="#" className="flex items-center gap-1 hover:text-gray-300">
+              Dia dos Pais <FontAwesomeIcon icon={faAngleDown} />
+            </a>
+            <a href="#" className="flex items-center gap-1 hover:text-gray-300">
+              Produtos <FontAwesomeIcon icon={faAngleDown} />
+            </a>
+            <a href="#" className="flex items-center gap-1 hover:text-gray-300">
+              Sobre nós <FontAwesomeIcon icon={faAngleDown} />
+            </a>
+            <button className="bg-[#AC4D53] hover:bg-[#822a30] p-3 rounded transition">
+              <FontAwesomeIcon icon={faCartShopping} />
+            </button>
           </div>
-    </nav>
+        </nav>
+      </section>
+<section className="block md:hidden">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1A0D00] text-white flex items-center justify-between px-4 h-18">
+
+          <img src={logo} alt="Logo" className="h-12 left-0" />
+
+          <div className="flex items-center justify-center gap-8 pt-2">                
+                <div className="relative">
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className="absolute top-3 left-10 text-white opacity-50"
+              />
+              <input
+                type="search"
+                placeholder="Buscar Produto"
+                className="w-48 pl-16 pr-6 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/50 focus:outline-none focus:border-white/50"
+              />
+            </div>
+            </div>
+
+
+          <div className="flex items-center gap-3">
+
+              <div className="relative inline-block group">
+                <FontAwesomeIcon 
+                  icon={faLocationDot} 
+                  className=" cursor-pointer hover:text-[#AC4D53] transition" 
+                />
+                {/* Popup que aparece ao passar o mouse */}
+                <div className="absolute top-full right-0  mb-2 
+                                opacity-0 group-hover:opacity-100 
+                                pointer-events-none group-hover:pointer-events-auto
+                                transition-all duration-300 
+                                whitespace-nowrap">
+                  <div className="bg-black text-white text-sm px-3 py-2 rounded-lg shadow-xl">
+                    Encontre uma loja
+
+                  </div>
+                </div>
+              </div>
+            {/* modal menu de hamburguer */}
+            <FontAwesomeIcon icon={faBars} />
+            
+          </div>
+
+        </nav>
+              </section>
     </>
   )
 }

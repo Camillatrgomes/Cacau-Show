@@ -100,19 +100,22 @@ function Card() {
   ];
 
   return (
-    <section className="row justify-center-safe">
-      <div className="cards-container grid grid-cols-3 pt-24">
-        {produtos.map((produtos, index) => (
+<section className="py-12 md:py-82">
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+              {produtos.map((produtos, index) => (
           <div
             key={index}
-            className="w-80 bg-white rounded-2xl shadow-lg mt-24"
+            className="w-80 bg-white rounded-2xl shadow-lg "
           >
             <img
               className="w-full h-72 object-cover border shadow bg-amber-100"
               src={produtos.img}
             />
 
-            <h3 className="text-lg font-semibold text-gray-900 my-6 pt-4 px-3">
+            <h3 className="text-lg font-semibold text-gray-900 my-8 px-3">
               {produtos.label}
             </h3>
 
@@ -134,6 +137,7 @@ function Card() {
             </button>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
