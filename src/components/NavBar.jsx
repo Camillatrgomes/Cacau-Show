@@ -11,7 +11,7 @@ import {
 import produto01 from "../assets/produto01.png";
 import produto02 from "../assets/produto02.png";
 
-function NavBar() {
+function NavBar({abrirCarrinho}) {
   return (
     <>
       <section className="hidden lg:block">
@@ -63,7 +63,7 @@ function NavBar() {
             
         </div>
 
-            <button className="bg-[#9C7561] hover:bg-[#835c49] text-white text-md rounded shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <button className="bg-[#9C7561] hover:bg-[#835c49] text-white text-md rounded shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" >
               Faça o Login
             </button>
 
@@ -167,7 +167,7 @@ function NavBar() {
               <a
                 href="#"
                 className="flex items-center gap-1 hover:bg-[#AC4D53] p-3 rounded-t-lg transition hover:border-b-2"
-              >
+              onClick={abrirCarrinho}>
                 <FontAwesomeIcon icon={faCartShopping} /> Meu carrinho
               </a>
             </div>

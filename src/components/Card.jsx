@@ -10,7 +10,6 @@ import {
   faCartShopping,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import abrir from "./Carrinho.jsx";
 
 function ContadorComLimite() {
   const [quantidade, setQuantidade] = useState(0);
@@ -40,7 +39,7 @@ function ContadorComLimite() {
   );
 }
 
-function Card() {
+function Card({ abrirCarrinho }) {
   const produtos = [
     {
       img: img1,
@@ -130,8 +129,7 @@ function Card() {
 
               <button
                 className="bg-[#068421] text-white text-md w-full py-6 rounded-b-lg text-center inset-shadow-sm inset-shadow-black-500 cursor-pointer"
-                onClick={abrir}
-              >
+                onClick={abrirCarrinho}>
                 <FontAwesomeIcon icon={faCartShopping} />
                 {produtos.buttonCarrinho}
               </button>

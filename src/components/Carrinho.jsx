@@ -1,31 +1,32 @@
-import { use, useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCartShopping,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 
+function Carrinho({ aberto, fechar }) {
+  if (!aberto) return null;
 
-function Carrinho() {
-const {aberto, setAberto} = useState(false);
-const abrir = () => setAberto(true)
-const fechar = () => setAberto(false);
+  return (
+    <div className="fixed inset-0 z-50 flex justify-end">
+      <div
+        onClick={fechar}
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+      />
 
-    return (
-        <>
-        {aberto  (
-            <div className="fixed inset-0 z-50 flex justify-end">
+      <div className="relative bg-white w-full max-w-md h-full shadow-2xl p-6">
+        <button
+          onClick={fechar}
+          className="absolute top-4 right-4 text-2xl text-gray-700"
+        >
+          x
+        </button>
 
-            <div onClick={fechar} className="absolute inset-0 bg-black/70 backdrop-blur-sm" >
-
-            <div className="relative bg-white w-full max-w-md h-full shadow-2xl p-6 overflow">
-
-            <button onClick={fechar} className="absolute top-4 right-4 text-2xl" >x</button>
+        <h2 className="text-xl font-bold text-[#AC4D53]"><FontAwesomeIcon icon={faCartShopping} /> Meu carrinho</h2>
         
-            <h2 className="">Meu carrinnho</h2>
-
-            </div>
-            </div>
-            </div>
-
-        )}
-        </>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Carrinho;
