@@ -11,16 +11,17 @@ function Home() {
 
     return (
       <section className="relative sm:h-[30vh] lg:h-[50vh]">
-        <div className="inset-0 my-16 ">
+        <div className="inset-0 my-16">
           <img
             src={Banner}
             alt=""
             className="w-full object-cover"
           />
  
-<div className="pt-16 w-full ">
+<div className="pt-16 w-full">
           <div className="flex flex-wrap gap-4 sm:gap-6 justify-center">
-                          <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300">
+                          <button className="bg-[#AC4D53] hover:bg-[#822a30] text-white text-md rounded-2xl shadow-lg transition-all duration-300 cursor-pointer" onClick={() => {navigator.clipboard.writeText('PRIMEIRACOMPRA'), alert('Cupom copiado!') ;
+                }}>
                 Cupom de Primeira compra <br />
                 <FontAwesomeIcon icon={faCheck} /> Clique aqui para copiar
               </button>

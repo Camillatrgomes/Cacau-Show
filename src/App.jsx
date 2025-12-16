@@ -6,7 +6,7 @@ import Carrinho from './components/Carrinho';
 import Footer from './components/Footer';
 
 function App() {
-    const [aberto, setAberto] = useState(false);
+  const [aberto, setAberto] = useState(false);
 
   return (
     <div>
